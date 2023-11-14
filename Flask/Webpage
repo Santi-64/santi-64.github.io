@@ -14,6 +14,13 @@ def install_gem(gem):
 install_gem('bundler')
 install_gem('jekyll')
 
+import subprocess
+
+def start_jekyll_server():
+    subprocess.check_call(["jekyll", "serve", "--host=0.0.0.0"])
+
+start_jekyll_server()
+
 from flask import Flask, redirect, url_for
 
 app = Flask(__name__)
