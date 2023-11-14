@@ -6,6 +6,14 @@ def install(package):
 
 install('Flask')
 
+import subprocess
+
+def install_gem(gem):
+    subprocess.check_call(["gem", "install", gem])
+
+install_gem('bundler')
+install_gem('jekyll')
+
 from flask import Flask, redirect, url_for
 
 app = Flask(__name__)
